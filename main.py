@@ -93,7 +93,7 @@ async def default(msg: types.Message, state: FSMContext):
 
 async def philosophy():
     while True:
-        with open("json_libs/ids.json", "r") as f:
+        with open("json_libs/ids.json", "r", encoding="windows-1251") as f:
             file_ph = json.load(f)
             for li in file_ph:
                 try:

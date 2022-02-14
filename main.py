@@ -49,8 +49,8 @@ async def start(msg: types.Message, state: FSMContext):
         with open("json_libs/ids.json", "r") as f:
             file_ids = json.load(f)
         with open("json_libs/ids.json", "w") as f:
-            if str(data["id"]) not in file_ids:
-                file_ids[data["id"]] = main_mess["message_id"]
+
+            file_ids[data["id"]] = main_mess["message_id"]
             json.dump(file_ids, f)
 
 

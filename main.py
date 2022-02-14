@@ -57,7 +57,7 @@ async def start(msg: types.Message, state: FSMContext):
 @dp.callback_query_handler(text="books", state=States.MainState.state)
 async def push(call: types.CallbackQuery):
     rand = random.choice(books)
-    with open("json_libs/books_info.json", "r") as f:
+    with open("json_libs/books_info.json", "r", encoding="windows-1251") as f:
         file_book = json.load(f)
         try:
             await call.message.edit_text(f"<b>{rand}</b>\n\n\n<a href='{file_book[rand]}'>Перейти в источник</a>", parse_mode="HTML", reply_markup=kb.books)

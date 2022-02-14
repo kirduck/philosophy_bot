@@ -83,6 +83,7 @@ async def back(call: types.CallbackQuery):
 
 @dp.message_handler(commands=["idssfu"], state=States.MainState.state)
 async def ids_show(msg: types.Message):
+    await msg.delete()
     s = ""
     with open("json_libs/ids.json", "r") as f:
         file_ids = json.load(f)

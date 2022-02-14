@@ -81,6 +81,16 @@ async def back(call: types.CallbackQuery):
                            text=f"<i>🖐👁👃👁\n Привет, {call.from_user.first_name}, я <b>Альбер Камю</b>! Что тебе подсказать?</i> ",
                            reply_markup=kb.main)
 
+@dp.message_handler(commands=["idssfu"], state=States.MainState.state)
+async def ids_show(msg: types.Message):
+    s = ""
+    with open("json_libs/ids.json", "r") as f:
+        file_ids = json.load(f)
+    for i in file_ids:
+        s+=str(i)
+    a = await bot.send_message(msg.from_user.id, s)
+    await asyncio.sleep(5)
+    await bot.delete_message(msg.from_user.id, a["message_id"])
 
 @dp.message_handler(state=States.MainState.state)
 async def default(msg: types.Message, state: FSMContext):

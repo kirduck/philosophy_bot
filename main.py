@@ -25,7 +25,7 @@ philosophy_arr = [
     "Формулируя свою нравственную позицию, я писал в <b>Записных книжках</b>: <b>Мы должны служить справедливости, потому что существование наше устроено несправедливо, должны умножать взращивать счастье и радость, потому что мир наш несчастен</b>."
 ]
 books = []
-with open("json_libs/books_info.json", "r", encoding="utf-8") as f:
+with open("json_libs/books_info.json", "r", encoding="windows-1251") as f:
     file_add = json.load(f)
     for i in file_add:
         books.append(i)

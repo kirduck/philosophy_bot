@@ -4,8 +4,6 @@ import random
 import time
 
 import aiogram.utils.exceptions
-import requests
-import bs4
 
 from aiogram import types, Dispatcher, executor, Bot
 from aiogram.dispatcher import FSMContext

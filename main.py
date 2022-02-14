@@ -82,7 +82,7 @@ async def back(call: types.CallbackQuery):
                            reply_markup=kb.main)
 
 
-@dp.message_handler()
+@dp.message_handler(state=States.MainState.state)
 async def default(msg: types.Message, state: FSMContext):
     async with state.proxy() as data:
         await msg.delete()

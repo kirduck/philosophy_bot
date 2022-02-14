@@ -1,8 +1,3 @@
-import asyncio
-import json
-import random
-import time
-
 import aiogram.utils.exceptions
 
 from aiogram import types, Dispatcher, executor, Bot
@@ -10,9 +5,12 @@ from aiogram.dispatcher import FSMContext
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 
 from aiogram.dispatcher.filters.state import State, StatesGroup
-
+import asyncio
+import json
+import random
+import time
 import kb
-from token import TOKEN
+
 
 
 
@@ -32,7 +30,7 @@ with open("json_libs/books_info.json", "r") as f:
     for i in file_add:
         books.append(i)
 
-bot = Bot(token=TOKEN)
+bot = Bot(token='5278938017:AAEgs0BuKmQlA3sgOVQk9Wpqx7IAoHsw7Wk')
 dp = Dispatcher(bot, storage=MemoryStorage())
 
 class States(StatesGroup):

@@ -9,6 +9,7 @@ import asyncio
 import json
 import random
 import kb
+from tok import TOKEN
 
 
 
@@ -29,7 +30,7 @@ with open("json_libs/books_info.json", "r") as f:
     for i in file_add:
         books.append(i)
 
-bot = Bot(token='5278938017:AAEgs0BuKmQlA3sgOVQk9Wpqx7IAoHsw7Wk')
+bot = Bot(token=TOKEN)
 dp = Dispatcher(bot, storage=MemoryStorage())
 
 class States(StatesGroup):
